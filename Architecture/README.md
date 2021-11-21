@@ -1,2 +1,2 @@
 #IMAGE
-![alt text here](Design.jpg)
+![](Design.jpg)
