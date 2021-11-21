@@ -1,7 +1,7 @@
 /********************************************
 Project Name: PASTRY SHOP BILLING SYSTEM
 Author: NIRMAL KUMAR D R
-Source filename:billing.c
+Source filename:main.c
 Date: 21th-Nov-2021.
 *********************************************/
 #include<stdio.h>
