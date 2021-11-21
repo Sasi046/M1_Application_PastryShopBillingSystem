@@ -1,10 +1,8 @@
 /********************************************
-Project Name:CUSTOMER BILLING SYSTEM
-Author: ManoVishnu A
-        Mandala Saikushal
-        Sai Chaitanya Kathri
+Project Name: PASTRY SHOP BILLING SYSTEM
+Author: NIRMAL KUMAR D R
 Source filename:billing.c
-Date: 18th-Nov-2017.
+Date: 21th-Nov-2021.
 *********************************************/
 #include<stdio.h>
 #include<string.h>
@@ -362,7 +360,7 @@ void mdisplay()
 
 int main()
 {
-	char ch,password[10],q[10]="progto";
+	char ch,password[10],q[10]="nirmal";
 	int s=0;
 	int y=0;
 	int w=1;
@@ -374,7 +372,7 @@ int main()
 	printf("\n");
 	printf("************************************************************************************************************************");
 	printf("\n");
-	printf("*****************************************    WELCOME TO DENIMXPRESS    *************************************************");
+	printf("*****************************************    WELCOME TO PASTRY SHOP    *************************************************");
 	printf("\n");
 	printf("\t                               YOU ARE LUCKY TO BE SHOPPING HERE");
 	printf("\n\n");
