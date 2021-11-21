@@ -1,2 +1,2 @@
 #IMAGE
-![](Design.jpg)
+![Design Diagram](Design.jpg)
