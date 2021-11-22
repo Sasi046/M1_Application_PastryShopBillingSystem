@@ -16,6 +16,16 @@ SWOT Analysis:
    * 'w' - initially we are in trouble
    * 'o' - will known each and everyone's problem
    * 'T' - being a lot of users
+ 
+4 W's and 1 H
+
+  Who : Administrator can managing bills and adding product.
+
+  What: An application which can be used to generate bills.
+
+  When:  Administrator generate bills for customer.
+
+  Where : It can be used by administrator everywhere.
   
 Detail requirements
 
