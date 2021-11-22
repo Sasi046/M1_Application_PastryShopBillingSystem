@@ -16,3 +16,17 @@ SWOT Analysis:
    * 'w' - initially we are in trouble
    * 'o' - will known each and everyone's problem
    * 'T' - being a lot of users
+  
+##Detail requirements
+
+High Level Requirements:
+
+HLR1-	System Shall be able to add or edit at any time-Implemented
+HLR2-	User shall add account-Implemented
+HLR3-	User shall to search account-Implemented
+HLR4-	Due amount to be paid is shown as negative balance-Implemented
+
+Low level Requirements:
+
+LLR1-	User can save address, name, payment, date-Implemented
+LLR2-	System Shall be able to Exit-Implemented
