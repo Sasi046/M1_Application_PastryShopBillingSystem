@@ -19,13 +19,13 @@ SWOT Analysis:
  
 4 W's and 1 H
 
-    Who : Administrator can managing bills and adding product.
+   Who-Administrator can managing bills and adding product.
 
-    What: An application which can be used to generate bills.
+   What-An application which can be used to generate bills.
 
-    When:  Administrator generate bills for customer.
+   When-Administrator generate bills for customer.
 
-    Where : It can be used by administrator everywhere.
+   Where-It can be used by administrator everywhere.
   
 Detail requirements
 
