@@ -7,3 +7,5 @@
 #include<time.h>
 #include "fun.h"
 #include "struct.h"
+
+
