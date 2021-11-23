@@ -1,9 +1,3 @@
-/********************************************
-Project Name: PASTRY SHOP CENTRAL SYSTEM
-Author: NIRMAL KUMAR D R
-Source filename:main.c
-Date: 21th-Nov-2021.
-*********************************************/
 #include<stdio.h>
 #include<conio.h>
 #include<string.h>
@@ -26,12 +20,9 @@ if(GetConsoleScreenBufferInfo(hStdOut,&csbi))
 {
 	wColor=(csbi.wAttributes & 0xF0)+(ForgC & 0x0F);
 
-	SetConsoleTextAttribute(hStdOut,wColor);
-	
+	SetConsoleTextAttribute(hStdOut,wColor);	
 }
 }
-
-
 struct item
 {
 	char productname[40],productcomp[40],c;
@@ -61,10 +52,7 @@ wel_come();
 login(); 
 }
 
-
-
 void wel_come(void)
-
 {
 	setcolor(11);
 	time_t t;
@@ -79,12 +67,11 @@ void wel_come(void)
 	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
 	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
 	printf("|\t\t\t\t**********************************\t\t\t\t\t\t|\n");
-	printf("|\t\t\t\t*\t       WELCOME TO \t *\t\t\t\t\t\t|\n");
-	printf("|\t\t\t\t*\tPastry Shop Central System\t *\t\t\t\t\t\t|\n");
+	printf("|\t\t\t*\t        WELCOME TO \t            *\t\t\t\t\t\t|\n");
+	printf("|\t\t\t*\t Pastry Shop Central System\t    *\t\t\t\t\t\t|\n");
 	printf("|\t\t\t\t**********************************\t\t\t\t\t\t|\n");
 	printf("|\t\t\t\t          RS Puram, CBE\t\t\t\t\t\t\t|\n");
-	printf("|\t\t\t\t\t         8734534895\t\t\t\t\t\t\t\t|\n");
-	printf("|\t\t\t\t    \"WE BELIEVE IN QUALITY\"\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t     \"WE BAKING WITH LOVE\"\t\t\t\t\t\t\t|\n");
 	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
 	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
 	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
@@ -102,15 +89,13 @@ system("cls");
 
 void login()
 {
-
 	int valid=0;
 	int a=0, i=0;
 	char username[20];
 	char password[20];
 	char uname[20]="nirmal";
 	char pword[20]="kumar";
-	
-	
+		
 		system("cls");
 	gotoxy(15,1);
 	printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< LOGIN PAGE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -194,9 +179,7 @@ void menu(void)
 		case 6:
 		printf("System Exit");
 		exit(0);
-		break;
-			
-		
+		break;					
 		default:
 		printf("Invalid Choice! System Exit\n");
 			getch();
@@ -210,9 +193,7 @@ void add_item()
 	char c;
 	int a=0;
 
-	FILE *fp;
-	
-
+	FILE *fp;	
 	do
 	{
 		system("cls");
@@ -240,11 +221,9 @@ void add_item()
 		{
 			printf("\nProduct Code\t :");
 			scanf("%i",&st.productid);
-		}
-		
+		}		
 		do
-		{
-		
+		{		
 			
 			fflush(stdin);
 			printf("\nProduct Name\t :");
@@ -265,13 +244,10 @@ void add_item()
 			{
 				printf("\n Name contain invalid character. Please 'Enter' again");
 				getch();
-			
-				
+							
 			}
 		}while(!valid);	
-		
-
-		
+				
 			do
 		{
 			char productcomp[40];
@@ -294,11 +270,9 @@ void add_item()
 			{
 				printf("\n Name contain invalid character. Please 'Enter' again");
 				getch();
-			
-				
+							
 			}
-		}while(!valid);
-		
+		}while(!valid);		
 		
 		do
 			{
@@ -421,11 +395,9 @@ void read_item()
 		getch();
 		menu();
 
-
 	}
 	else
-	{
-	
+	{	
 		gotoxy(0,5);
 			for(i=0;i<100;i++)
 		{
@@ -440,8 +412,7 @@ void read_item()
 		gotoxy(60,6);
 		printf("Product CODE");
 		gotoxy(80,6);
-		printf("Product Quantity\n");
-		
+		printf("Product Quantity\n");		
 		for(i=0;i<100;i++)
 		{
 			printf("-");
@@ -531,13 +502,10 @@ void edit_item()
 					{
 						printf("\n Name contain invalid character. Please 'Enter' again");
 						getch();
-					
-						
+											
 					}
-				}while(!valid);	
-				
-		
-				
+				}while(!valid);					
+						
 				do
 				{
 					char productcomp[40];
@@ -559,8 +527,7 @@ void edit_item()
 					if (!valid)
 					{
 						printf("\n Name contain invalid character. Please 'Enter' again");
-						getch();
-					
+						getch();					
 						
 					}
 				}while(!valid);
@@ -587,8 +554,7 @@ void edit_item()
 					printf("\n\tEnter New Quantity[1-500] only.Re-Enter.");
 				}
 			}while(st.Qnt<1 || st.Qnt>500);
-				
-				
+								
 				printf("Press 'y' to edit the existing record or any key to cancel...");
 				edit=getche();
 				if(edit=='y' || edit=='Y')
