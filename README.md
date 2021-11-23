@@ -25,11 +25,14 @@ In Pastry Shop Billing System, structure has very beautifully used to group the 
 
 Pastry Shop Billing System application is so simple to use. In order to use the application, click at the exe file and then, you will have three options to:
 
-1. `To add product`
-2. `To search product`
-3. `To exit`
+1. `To Add products`
+2. `To Search product`
+3. `To Delete products`
+4. `To Read items`
+5. `To Edit items`
+6. `To Exit`
 
-As per your need, enter 1, 2,or 3 and follow the instructions provided by the application itself.
+As per your need, enter 1, 2, 3, 4, 5 or 6 and follow the instructions provided by the application itself.
 
 ### Features:
 
