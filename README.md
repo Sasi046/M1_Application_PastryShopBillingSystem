@@ -27,6 +27,8 @@ The function `void search()` has been used to look for previously stored account
 
 In Pastry Shop Billing System, structure has very beautifully used to group the data type in single unit. The date variables (`day`, `month` and `year`) have been grouped in the structures named date where as other variables such as name, code, prize, quantity, company etc. are grouped under another structure named account.
 
+#### Functions:
+
 Pastry Shop Billing System application is so simple to use. In order to use the application, click at the exe file and then, you will have three options to:
 
 1. `To Add products`
