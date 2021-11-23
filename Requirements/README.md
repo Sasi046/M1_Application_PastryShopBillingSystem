@@ -4,9 +4,11 @@ Operating Environment:
 and enhanced reliability.
 
 Research:
- Pastry Billing System can perform and handle product stocks. we can add product records with names, code, prize, quantity, company here. Existing Product records can be readed, edited, searched, and deleted.
+ 
+Pastry Billing System can perform and handle product stocks. we can add product records with names, code, prize, quantity, company here. Existing Product records can be readed, edited, searched, and deleted.
  
 General Features:
+
 Major activities of the manual system is automated, which increases its throughput.
 • The system is fast, user friendly and interactive
 • The information entered is more accurate and clear
