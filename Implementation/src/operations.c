@@ -9,7 +9,6 @@
 #include "struct.h"
 
 void wel_come(void)
-
 {
 	setcolor(11);
 	time_t t;
@@ -44,7 +43,6 @@ void wel_come(void)
 getch();
 system("cls");
 }
-
 void login()
 {
 
@@ -53,9 +51,7 @@ void login()
 	char username[20];
 	char password[20];
 	char uname[20]="nirmal";
-	char pword[20]="kumar";
-	
-	
+	char pword[20]="kumar";	
 		system("cls");
 	gotoxy(15,1);
 	printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< LOGIN PAGE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -85,20 +81,14 @@ void login()
 			a++;
 		
 		}
-	} 
-	
-
-	
+	} 		
 	while(a<=2);	
 	if(a>2){
 		printf("\nSorry,You are the wrong User.");
 		getch();
 		exit(0);
-	}
-	
-	
+	}		
 }
-
 void menu(void)
 {
 	int choice;
@@ -112,13 +102,10 @@ void menu(void)
 	printf("\n\t\tPress <3> Search Products");
 	printf("\n\t\tPress <4> Read Items");
 	printf("\n\t\tPress <5> Edit Items");
-	printf("\n\t\tPress <6> Exit!");	
-	
+	printf("\n\t\tPress <6> Exit!");		
 	printf("\n\t\tEnter your choice[1-6]");
-	scanf("%i", &choice);
-	
-	system("cls");
-	
+	scanf("%i", &choice);	
+	system("cls");	
 	switch(choice)	
 	{
 		case 1:
@@ -139,40 +126,31 @@ void menu(void)
 		case 6:
 		printf("System Exit");
 		exit(0);
-		break;
-			
-		
+		break;					
 		default:
 		printf("Invalid Choice! System Exit\n");
 			getch();
-	}
-	
+	}	
 }
-
 void add_item()
 {
 	int index, valid;
 	char c;
 	int a=0;
-
-	FILE *fp;
-	
-
+	FILE *fp;	
 	do
 	{
 		system("cls");
 		printf("<<<<<<<<<<<<<<Enter Product Detail>>>>>>>>>>>>>");
 		int ID;
-		fp = fopen("NextFile.dat","a+");
-		
+		fp = fopen("NextFile.dat","a+");		
 		if((fp = fopen("NextFile.dat","a+"))!=NULL)
 		{
 			I:
 			printf("\nProduct Code\t :");
 			scanf("%i",&ID);
 			while(fscanf(fp,"%s %s %i %i %i", st.productname, st.productcomp, &st.price, &st.productid,&st.Qnt)!=EOF)
-			{
-				
+			{				
 				if(ID == st.productid)
 				{
 					printf("\n\tTHE PRODUCT CODE ALREADY EXIST.\n");
@@ -185,17 +163,14 @@ void add_item()
 		{
 			printf("\nProduct Code\t :");
 			scanf("%i",&st.productid);
-		}
-		
+		}		
 		do
 		{
-		
-			
+					
 			fflush(stdin);
 			printf("\nProduct Name\t :");
 			gets(st.productname); 
-			st.productname[0]=toupper(st.productname[0]);
-			
+			st.productname[0]=toupper(st.productname[0]);			
 			for (index=0; index<strlen(st.productname); ++index)
 			{	
 				if(isalpha(st.productname[index]))
@@ -209,14 +184,9 @@ void add_item()
 			if (!valid)
 			{
 				printf("\n Name contain invalid character. Please 'Enter' again");
-				getch();
-			
-				
+				getch();							
 			}
-		}while(!valid);	
-		
-
-		
+		}while(!valid);					
 			do
 		{
 			char productcomp[40];
@@ -238,13 +208,9 @@ void add_item()
 			if (!valid)
 			{
 				printf("\n Name contain invalid character. Please 'Enter' again");
-				getch();
-			
-				
+				getch();							
 			}
-		}while(!valid);
-		
-		
+		}while(!valid);				
 		do
 			{
 				printf("\nPrice [10-5000]Rupees:");
@@ -253,8 +219,7 @@ void add_item()
 				{
 					printf("\n\tYou Cannot Enter the price limit [10-5000].Re-Enter.");
 				}
-			}while(st.price<10 || st.price>5000);
-			
+			}while(st.price<10 || st.price>5000);			
 				do
 			{
 				printf("\nQuantity [1-500]\t:");
@@ -263,20 +228,15 @@ void add_item()
 				{
 					printf("\n\tEnter Quantity[1-500] only.Re-Enter.");
 				}
-			}while(st.Qnt<1 || st.Qnt>500);
-	
-	
-		
+			}while(st.Qnt<1 || st.Qnt>500);				
 		fp=fopen("NextFile.dat","a");
 		fprintf(fp,"\n%s %s %i %i %i", st.productname, st.productcomp,st.price, st.productid,st.Qnt);
 		fclose(fp);
-		printf("\nPress 'Enter' to add more item and any other key to go to main menu");
-		
+		printf("\nPress 'Enter' to add more item and any other key to go to main menu");		
 	}
 	while((c = getch()) =='\r');
 	menu();
 }
-
 void search_item()
 {
 	char target[40];
@@ -294,8 +254,7 @@ void search_item()
 		{
 			found=1;		
 		}
-	}
-	
+	}	
 	if(found)
 	{
 		printf("\n Record found");
@@ -307,10 +266,8 @@ void search_item()
 		fclose(sfile);
 		printf("\nPress any key to go to Main Menu!");
 		while((st.c = getch()) =='\r');
-		menu();
-		
+		menu();		
 }
-
 void deleteproduct(void)
 {
 	char target[40]; 
@@ -352,25 +309,20 @@ void deleteproduct(void)
 		while((st.c = getch()) =='\r');
 		menu();
 }
-
 void read_item()
 {
 	FILE *f;
 	int i, q;
 	if((f=fopen("NextFile.dat","r"))==NULL)
-	{
-	
+	{	
 		gotoxy(10,3);
 		printf("NO RECORDS");
 		printf("\n\t\tPress any key to go back to Menu.");
 		getch();
 		menu();
-
-
 	}
 	else
-	{
-	
+	{	
 		gotoxy(0,5);
 			for(i=0;i<100;i++)
 		{
@@ -385,8 +337,7 @@ void read_item()
 		gotoxy(60,6);
 		printf("Product CODE");
 		gotoxy(80,6);
-		printf("Product Quantity\n");
-		
+		printf("Product Quantity\n");		
 		for(i=0;i<100;i++)
 		{
 			printf("-");
@@ -403,22 +354,18 @@ void read_item()
 			gotoxy(60,q);
 			printf("%i",st.productid);
 			gotoxy(80,q);
-			printf("%i",st.Qnt);
-	
+			printf("%i",st.Qnt);	
 			q++;
 		}
 		printf("\n");
 		for(i=0;i<100;i++)
 			printf("-");
 	}
-	fclose(f);
-	
-	printf("\nPress any key to go to Main Menu!");
-		
+	fclose(f);	
+	printf("\nPress any key to go to Main Menu!");		
 		getch();
 		menu();
 }
-
 void edit_item()
 {
 	int index, valid;
@@ -443,20 +390,17 @@ void edit_item()
 		while(fscanf(fp,"%s %s %i %i %i\n", st.productname,st.productcomp, &st.price, &st.productid,&st.Qnt)!=EOF)
 		{
 			if(id==st.productid)
-			{
-				
+			{				
 				a=1;
 				printf("\n\t*****  Record Found  *****");
 				printf("\nProduct Name\t\t: %s",st.productname);
 				printf("\nProduct Company\t\t: %s",st.productcomp);
 				printf("\nPrice\t\t\t: %i",st.price);
 				printf("\nProduct Code\t\t: %i",st.productid);
-				printf("\nProduct Quantity\t:%i",st.Qnt);
-			
+				printf("\nProduct Quantity\t:%i",st.Qnt);			
 				printf("\n\n\t*** New Record ***");
 			do
-				{
-					
+				{					
 					fflush(stdin);
 					printf("\nNew Product Name\t\t: ");
 					gets(st.productname); 
@@ -475,14 +419,10 @@ void edit_item()
 					if (!valid)
 					{
 						printf("\n Name contain invalid character. Please 'Enter' again");
-						getch();
-					
-						
+						getch();										
 					}
 				}while(!valid);	
-				
-		
-				
+									
 				do
 				{
 					char productcomp[40];
@@ -504,9 +444,7 @@ void edit_item()
 					if (!valid)
 					{
 						printf("\n Name contain invalid character. Please 'Enter' again");
-						getch();
-					
-						
+						getch();											
 					}
 				}while(!valid);
 				
@@ -547,8 +485,7 @@ void edit_item()
 			{
 				fprintf(rp,"%s %s %i %i %i\n", st.productname, st.productcomp, st.price, st.productid,st.Qnt);
 				fflush(stdin);
-			}
-			
+			}			
 		}
 		if(!a)
 		{
