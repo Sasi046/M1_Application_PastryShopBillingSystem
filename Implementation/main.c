@@ -41,10 +41,8 @@ struct item
 }st;
 
 void wel_come(void);
-void title(void);
 void login();
 void menu(void);
-void title(void);
 void deleteproduct(void);
 void gotoxy(short x, short y)
 {
