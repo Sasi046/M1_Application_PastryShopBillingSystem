@@ -1,4 +1,7 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/878526e225a2415d9b75e960e8959a27)](https://www.codacy.com/gh/Nirmalrg2898/M1_Application_PastryShopBillingSystem/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Nirmalrg2898/M1_Application_PastryShopBillingSystem&amp;utm_campaign=Badge_Grade)
+
 # M1_Application_PastryShopBillingSystem
+
 
 The source code of Pastry Shop Billing System Project in C has been written in C programming language without of the use of any graphics. The code is complete, totally error free. It is to be compiled in Visual studios using GCC compiler.
 
