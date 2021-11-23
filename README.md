@@ -42,6 +42,13 @@ The Pastry Shop billing System project in C gives you the facility of searching 
 The product stocks is shown in read system .
 If you have nothing to do with the program, you can directly exit from the main menu.
 
+### Folder Structure
+
+1) Requirements-Documents Detailing requirements and research.
+2) Architecture-Documents Specifying design details.
+3) Implementation-All Code and Documentation.
+4) Test Plan-test Cases.
+
 ### Integrated Tools to GitHub 
 
 Codacy
@@ -58,5 +65,5 @@ Codacy
 
 1.gcc makefile
 
-2.github workflo
+2.github workflow
 
