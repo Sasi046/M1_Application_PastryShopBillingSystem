@@ -1,515 +1,622 @@
 /********************************************
-Project Name: PASTRY SHOP BILLING SYSTEM
+Project Name: PASTRY SHOP CENTRAL SYSTEM
 Author: NIRMAL KUMAR D R
 Source filename:main.c
 Date: 21th-Nov-2021.
 *********************************************/
 #include<stdio.h>
+#include<conio.h>
 #include<string.h>
 #include<ctype.h>
-#include<conio.h>
+#include<stdlib.h>
+#include<windows.h>
+#include<time.h>
+
+#define ENTER 13
+#define BKSP 8
+#define SPACE 32
+#define TAB 9
+
+void setcolor(int ForgC)
+{ WORD wColor;
+HANDLE hStdOut=GetStdHandle(STD_OUTPUT_HANDLE);
+CONSOLE_SCREEN_BUFFER_INFO csbi;
+
+if(GetConsoleScreenBufferInfo(hStdOut,&csbi))
+{
+	wColor=(csbi.wAttributes & 0xF0)+(ForgC & 0x0F);
+
+	SetConsoleTextAttribute(hStdOut,wColor);
+	
+}
+}
+
 
 struct item
 {
-	int productno;
-	char productname[10];
-	int quantity;
+	char productname[40],productcomp[40],c;
+	int productid;
 	int price;
-}
-item;
-struct customer
+	int Qnt;
+}st;
+
+void wel_come(void);
+void title(void);
+void login();
+void menu(void);
+void title(void);
+void deleteproduct(void);
+void gotoxy(short x, short y)
 {
-	int productno;
-	char productname[10];
-	int quantity;
-	int price;
-	int amount;
+	COORD pos ={x,y};
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),pos);
 }
-cst[100];
-struct temporary
+
+void add_item();
+void read_item();
+void search_item();
+void edit_item();
+void main(void)
+
 {
-	int productno;
-	char productname[10];
-	int quantity;
-	int price;
-	int amount;
+wel_come(); 
+login(); 
 }
-cstr[100];
-int t=0;
-int n=0; //used in Quantity and Records.txt
-int k=0;
-int ba=0;
-int ti=0;
-void create()
+
+
+
+void wel_come(void)
+
 {
-	int i=0;
-	FILE *fp;
-	fp=fopen("Records.txt","w");
-	if(fp==NULL)
+	setcolor(11);
+	time_t t;
+	time(&t);
+	printf("                                                                                                         \n");
+	printf("---------------------------------------------------------------------------------------------------------\n");
+	printf("\t\t\t\t\t%s",ctime(&t));
+	printf("---------------------------------------------------------------------------------------------------------\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t**********************************\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t*\t       WELCOME TO \t *\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t*\tPastry Shop Central System\t *\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t**********************************\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t          RS Puram, CBE\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t         8734534895\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t    \"WE BELIEVE IN QUALITY\"\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|\t\t\t\t\t\t\t\t\t\t\t\t\t\t|\n");
+	printf("|Press any key to continue.........\t\t\t\t\t\t\t\t\t\t|\n");
+
+	printf("---------------------------------------------------------------------------------------------------------\n");
+	 
+getch();
+system("cls");
+}
+
+void login()
+{
+
+	int valid=0;
+	int a=0, i=0;
+	char username[20];
+	char password[20];
+	char uname[20]="nirmal";
+	char pword[20]="kumar";
+	
+	
+		system("cls");
+	gotoxy(15,1);
+	printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< LOGIN PAGE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+	do
 	{
-		printf("Error\n");
-	}
-	printf("\t");
-	printf("Enter the Number of Records:");
-	scanf("%d",&n);
-	printf("\n");
-	FILE *fpq;
-	fpq=fopen("Quantity.txt","w");
-	fprintf(fp,"productno\t,ProductName\t, Quantity\n, Price\t");
-	fprintf(fpq,"%d",n);
-	fclose(fpq);
-	while(i<n)
-	{
-	    printf("\t");
-		printf("Enter Product Code:");
-		scanf("%d",&item.productno);
-		printf("\t");
-		printf("Enter Product Name:");
-		scanf("%s",item.productname);
-		printf("\t");
-		printf("Enter Quantity:");
-		scanf("%d",&item.quantity);
-		printf("\t");
-		printf("Enter Price:");
-		scanf("%d",&item.price);
-		printf("\n");
-		i++;
-		fprintf(fp,"%d\t%s\t%d\t%d\t",item.productno,item.productname,item.quantity,item.price);
-	}
-	fclose(fp);
-	printf("\t");
-	printf("Records are Created");
-	printf("\n");
-	printf("\n");
-}
-void bill()
-{
-	int na=0;  //used for product number in scanf function
-	int a=0;	/**/
-	int cont=0;
-	int k=0;
-	int r=0;
-	int w=0;
-	int ch=0;
-	int l=0;	/**/
-	int bi=0;
-	int ln=0;
-    printf("\t");
-	l3 : printf("Enter the Product Number:");
-	scanf("%d",&na);
-	printf("\n");
-	FILE *fp;
-	fp=fopen("Records.txt","w");
-	FILE *fptr;
-	fptr=fopen("temp.txt","w");
-	while(!(feof(fp)))
-	{
-		l++;
-		fscanf(fp,"%d",&item.productno);
-		fscanf(fp,"%s",item.productname);
-		fscanf(fp,"%d",&item.quantity);
-		fscanf(fp,"%d",&item.price);
-		if(item.productno == na)
+		
+	
+		printf("\n			Please Enter Your Valid Username & Password.");
+		printf("\n\n					Username:");
+		scanf("%s",username);
+		
+		printf("\n			    		Password:");
+
+		scanf("%s", password);
+		
+		if (strcmp(username,uname)==0&&strcmp(password,pword)==0)
 		{
-			ln++;
-			if(ln==2)
+			printf("\n			LOGGED INTO SYSTEM! PRESS ANY KEY TO MAIN MENU!");
+			getch();
+			menu();
 			break;
-			printf("Enter the Quantity:");
-			scanf("%d",&a);
-			if(a <= item.quantity)
+		}
+		else
+		{
+			printf("\n		 			Invalid!Try Again");
+			getch();
+			a++;
+		
+		}
+	} 
+	
+
+	
+	while(a<=2);	
+	if(a>2){
+		printf("\nSorry,You are the wrong User.");
+		getch();
+		exit(0);
+	}
+	
+	
+}
+
+void menu(void)
+{
+	int choice;
+	system("cls");
+	main:
+	printf("<<<<<<<<<<<<<<<<<<<<<<<<Welcome To Product Detail Management System>>>>>>>>>>>>>>>>>>>>>>>");
+	printf("                                                                                          ");
+	printf("                                                                                          ");
+	printf("\n\t\tPress <1> Add Products");
+	printf("\n\t\tPress <2> Delete Products");
+	printf("\n\t\tPress <3> Search Products");
+	printf("\n\t\tPress <4> Read Items");
+	printf("\n\t\tPress <5> Edit Items");
+	printf("\n\t\tPress <6> Exit!");	
+	
+	printf("\n\t\tEnter your choice[1-6]");
+	scanf("%i", &choice);
+	
+	system("cls");
+	
+	switch(choice)	
+	{
+		case 1:
+			add_item();
+			break;
+		case 2:
+			deleteproduct();
+			break;
+		case 3:
+		search_item();
+			break;
+		case 4:
+		read_item();
+			break;	
+		case 5:
+			edit_item();
+			break;
+		case 6:
+		printf("System Exit");
+		exit(0);
+		break;
+			
+		
+		default:
+		printf("Invalid Choice! System Exit\n");
+			getch();
+	}
+	
+}
+
+void add_item()
+{
+	int index, valid;
+	char c;
+	int a=0;
+
+	FILE *fp;
+	
+
+	do
+	{
+		system("cls");
+		printf("<<<<<<<<<<<<<<Enter Product Detail>>>>>>>>>>>>>");
+		int ID;
+		fp = fopen("NextFile.dat","a+");
+		
+		if((fp = fopen("NextFile.dat","a+"))!=NULL)
+		{
+			I:
+			printf("\nProduct Code\t :");
+			scanf("%i",&ID);
+			while(fscanf(fp,"%s %s %i %i %i", st.productname, st.productcomp, &st.price, &st.productid,&st.Qnt)!=EOF)
 			{
-				cst[ti].productno=item.productno;
-				strcpy(cst[ti].productname,item.productname);
-				cst[ti].quantity=a;
-				cst[ti].price=item.price;
-				item.quantity=item.quantity-a;
-				ti++;
-				//goto l1;
+				
+				if(ID == st.productid)
+				{
+					printf("\n\tTHE PRODUCT CODE ALREADY EXIST.\n");
+					goto I;
+				}
+			}
+			st.productid = ID;
+		}
+		else
+		{
+			printf("\nProduct Code\t :");
+			scanf("%i",&st.productid);
+		}
+		
+		do
+		{
+		
+			
+			fflush(stdin);
+			printf("\nProduct Name\t :");
+			gets(st.productname); 
+			st.productname[0]=toupper(st.productname[0]);
+			
+			for (index=0; index<strlen(st.productname); ++index)
+			{	
+				if(isalpha(st.productname[index]))
+					valid = 1;
+				else
+				{
+					valid = 0;
+					break;
+				}
+			}
+			if (!valid)
+			{
+				printf("\n Name contain invalid character. Please 'Enter' again");
+				getch();
+			
+				
+			}
+		}while(!valid);	
+		
+
+		
+			do
+		{
+			char productcomp[40];
+			fflush(stdin);
+			printf("\nProduct Company\t :");
+			gets(st.productcomp); 
+			st.productcomp[0]=toupper(st.productcomp[0]);
+			
+			for (index=0; index<strlen(st.productcomp); ++index)
+			{	
+				if(isalpha(st.productcomp[index]))
+					valid = 1;
+				else
+				{
+					valid = 0;
+					break;
+				}
+			}
+			if (!valid)
+			{
+				printf("\n Name contain invalid character. Please 'Enter' again");
+				getch();
+			
+				
+			}
+		}while(!valid);
+		
+		
+		do
+			{
+				printf("\nPrice [10-5000]Rupees:");
+				scanf("%i",&st.price);
+				if(st.price<10 || st.price>5000)
+				{
+					printf("\n\tYou Cannot Enter the price limit [10-5000].Re-Enter.");
+				}
+			}while(st.price<10 || st.price>5000);
+			
+				do
+			{
+				printf("\nQuantity [1-500]\t:");
+				scanf("%i",&st.Qnt);
+				if(st.Qnt<1 || st.Qnt>500)
+				{
+					printf("\n\tEnter Quantity[1-500] only.Re-Enter.");
+				}
+			}while(st.Qnt<1 || st.Qnt>500);
+	
+	
+		
+		fp=fopen("NextFile.dat","a");
+		fprintf(fp,"\n%s %s %i %i %i", st.productname, st.productcomp,st.price, st.productid,st.Qnt);
+		fclose(fp);
+		printf("\nPress 'Enter' to add more item and any other key to go to main menu");
+		
+	}
+	while((c = getch()) =='\r');
+	menu();
+}
+
+void search_item()
+{
+	char target[40];
+	int found=0;
+	FILE *sfile;
+	sfile=fopen("NextFile.dat","r");
+	printf("\nEnter name to search:");
+	fflush(stdin);
+	gets(target);
+	target[0]=toupper(target[0]);
+	while (!feof(sfile) && found==0)
+	{
+		fscanf(sfile,"%s %s %i %i %i", st.productname, st.productcomp, &st.price, &st.productid,&st.Qnt);
+		if(strcmp(target, st.productname)==0)
+		{
+			found=1;		
+		}
+	}
+	
+	if(found)
+	{
+		printf("\n Record found");
+		printf("\nProduct Name\t\t:%s  \nProduct Company\t\t:%s \nProduct Price\t\t:%i \nProduct ID\t\t:%i \nProduct Quantity\t:%i", st.productname, st.productcomp, st.price, st.productid, st.Qnt);
+	
+	}
+	else 
+		printf("Noo Record found");
+		fclose(sfile);
+		printf("\nPress any key to go to Main Menu!");
+		while((st.c = getch()) =='\r');
+		menu();
+		
+}
+
+void deleteproduct(void)
+{
+	char target[40]; 
+	int found=0;
+	FILE *sfile, *tfile;
+	sfile=fopen("NextFile.dat","r");
+	tfile=fopen("TempFile.dat","w+");
+	printf("\n Enter name to Delete: ");
+	fflush(stdin);
+	scanf("%s",target);
+	target[0]=toupper(target[0]);
+	while (fscanf(sfile,"%s %s %i %i %i\n",st.productname,st.productcomp, &st.price,&st.productid,&st.Qnt)!=EOF)
+	{
+		if(strcmp(target,st.productname)==0)
+		{
+			found=1;
+		}
+		else
+		{
+			fprintf(tfile,"%s %s %i %i %i\n", st.productname,st.productcomp, st.price,st.productid,st.Qnt);
+		}
+	}
+			if(!found)
+			{
+				printf("\n Record not Found");
+				getch();
+				menu();
 			}
 			else
 			{
-				printf("Sorry Out of Stock\n");
-				bi++;
-				//goto l1;
+				printf("\n Record deleted");	
 			}
-		}
-		else
-		{
-			cont++;
-			fprintf(fptr,"%d\t",item.productno);
-			fprintf(fptr,"%s\t",item.productname);
-			fprintf(fptr,"%d\t",item.quantity);
-			fprintf(fptr,"%d\t",item.price);
-			continue;
-		}
-		fprintf(fptr,"%d\t",item.productno);
-		fprintf(fptr,"%s\t",item.productname);
-		fprintf(fptr,"%d\t",item.quantity);
-		fprintf(fptr,"%d\t",item.price);
-	}
-	if(l==cont)
-	printf("Error:Choose Properly\n");
-	fclose(fptr);
-	fclose(fp);
-	remove("Records.txt");
-	rename("temp.txt","Records.txt");
-	ln=0;
-	printf("Do you Want to Shop More:\nPress 1 for More\nPress 2 to Exit");
-	scanf("%d",&k);
-	if(k==1)
-	goto l3;
+			fclose(sfile);
+			fclose(tfile);
+			remove("NextFile.dat");
+			rename("TempFile.dat","NextFile.dat");
+			
+			printf("\nPress any key to go to Main Menu!");
+		while((st.c = getch()) =='\r');
+		menu();
 }
 
-void display()
+void read_item()
 {
-	int nk=0;
-	FILE *fp;
-	fp=fopen("Records.txt","r");
-	if(feof(fp))
+	FILE *f;
+	int i, q;
+	if((f=fopen("NextFile.dat","r"))==NULL)
 	{
-		printf("Error in Opening Files\n");
+	
+		gotoxy(10,3);
+		printf("NO RECORDS");
+		printf("\n\t\tPress any key to go back to Menu.");
+		getch();
+		menu();
+
+
 	}
-	printf("\t");
-	printf("==============================================================\n");
-	printf("\t");
-	printf("|Product Number\t|Product Name\t|Quantity\t|Price\t\n");
-	printf("\t");
-	printf("==============================================================\n");
-	while(nk!=n)
+	else
 	{
-		nk++;
-		fscanf(fp,"%d",&item.productno);
-		if(item.productno==0)
+	
+		gotoxy(0,5);
+			for(i=0;i<100;i++)
 		{
-		    printf("\t");
-			printf("There are no items in Cart");
-			printf("\n");
-			break;
+			printf("-");
 		}
-		fscanf(fp,"%s",item.productname);
-		fscanf(fp,"%d",&item.quantity);
-		fscanf(fp,"%d",&item.price);
-		printf("\n\t  %14d|\t%8s|\t%8d|\t%d|\n",item.productno,item.productname,item.quantity,item.price);
-        //printf("\n");
-	}
-	fclose(fp);
-}
-void edit()
-{
-	FILE *fp;
-	FILE *fptr;
-	FILE *fpk;
-	int h;
-	int found=0;
-	int ka=0;
-	int p;
-	fp=fopen("Records.txt","r");
-	fptr=fopen("temp1.txt","w");
-	fpk=fopen("temp2.txt","w");
-	printf("\t");
-	printf("Enter the Product Number to Delete: ");
-	scanf("%d",&h);
-	printf("\n");
-	p=n;
-	while(!(ka==p))
-	{
-		ka++;
-		fscanf(fp,"%d",&item.productno);
-		if(item.productno==h)
+		gotoxy(5,6);
+		printf("Product Name");
+		gotoxy(25,6);
+		printf("Product Price");
+		gotoxy(40,6);
+		printf("Product Company");
+		gotoxy(60,6);
+		printf("Product CODE");
+		gotoxy(80,6);
+		printf("Product Quantity\n");
+		
+		for(i=0;i<100;i++)
 		{
-			found=1;
-			fscanf(fp,"%s",item.productname);
-			fscanf(fp,"%d",&item.quantity);
-			fscanf(fp,"%d",&item.price);
-			n--;
-			printf("\t");
-			printf("Product has been Successfully Deleted\n");
+			printf("-");
 		}
-		else
+		q=8;
+		while(fscanf(f,"%s %s %i %i %i\n", st.productname,st.productcomp, &st.price, &st.productid,&st.Qnt)!=EOF)
 		{
-			fscanf(fp,"%s",item.productname);
-			fscanf(fp,"%d",&item.quantity);
-			fscanf(fp,"%d",&item.price);
-			fprintf(fptr,"%d\t%s\t%d\t%d\t",item.productno,item.productname,item.quantity,item.price);
+			gotoxy(5,q);
+			printf("%s",st.productname);
+			gotoxy(25,q);
+			printf("%i",st.price);
+			gotoxy(40,q);
+			printf("%s",st.productcomp);
+			gotoxy(60,q);
+			printf("%i",st.productid);
+			gotoxy(80,q);
+			printf("%i",st.Qnt);
+	
+			q++;
 		}
-	}
-	fprintf(fpk,"%d",n);
-	fclose(fpk);
-	fclose(fptr);
-	fclose(fp);
-	if(found==0)
-	{
-	    printf("\t");
-		printf("Product no Found");
 		printf("\n");
-		printf("\n");
+		for(i=0;i<100;i++)
+			printf("-");
 	}
-	remove("Quantity.txt");
-	rename("temp2.txt","Quantity.txt");
-	remove("Records.txt");
-	rename("temp1.txt","Records.txt");
+	fclose(f);
+	
+	printf("\nPress any key to go to Main Menu!");
+		
+		getch();
+		menu();
 }
-void invoice()
+
+void edit_item()
 {
-	int j;
-	int o;
-	float gt=0;
-	if(ti==0)
+	int index, valid;
+	char target[40];
+	FILE *fp, *rp;
+	int a=0;
+	int id;
+	char edit;
+	long int size=sizeof(st);
+	if((fp=fopen("NextFile.dat","r+"))==NULL)
 	{
-		printf("There are No Products in your Cart");
-		printf("\n");
+		printf("NO RECORD ADDED.");
+		menu();
 	}
-	printf("\n\n");
-	printf("****************************INVOICE**************************");
-	printf("\n\n");
-	printf("product number\t| product name\t| price\t| quantity\t| amount\t|\n");
-	printf("*************************************************************\n");
-	for(o=0;o<ti;o++)
+	else
 	{
-		cst[o].amount=0;
-		cst[o].amount=((cst[o].price)*(cst[o].quantity));
-		gt=gt+cst[o].amount;
-	}
-	for(j=0;j<ti;j++)
-	{
-		printf("%6d\t       |%9s   \t  | %3d\t|%3d\t        |   %3d\n",cst[j].productno,cst[j].productname,cst[j].price,cst[j].quantity,cst[j].amount);
-	}
-	printf("\nAmount Payable:%f",gt);
-	printf("\n");
-	printf("Thank you for Shopping");
-	printf("\n");
-	printf("Visit Again");
-	printf("\n");
-}
-void mdelete()
-{
-	int i=0;
-	int j=0;
-	int f=0;
-	int g=0;
-	int ag=0;
-	int aj=0;
-	char ab[100];
-	FILE *fw;
-	FILE *fq;
-	printf("\t");
-	printf("Enter the Product Number to be Deleted:");
-	scanf("%d",&f);
-	printf("\n");
-	for(i=0;i<ti;i++)
-	{
-		if(cst[ti].productno==f)
+		rp = fopen("TempFile.dat","a");
+		system("cls");
+		printf("Enter Product Code for edit:");
+		scanf("%i",&id);
+		fflush(stdin);
+		while(fscanf(fp,"%s %s %i %i %i\n", st.productname,st.productcomp, &st.price, &st.productid,&st.Qnt)!=EOF)
 		{
-			aj=cst[i].quantity;
-			printf("\t");
-			printf("Product Deleted Successfully");
-			printf("\n");
+			if(id==st.productid)
+			{
+				
+				a=1;
+				printf("\n\t*****  Record Found  *****");
+				printf("\nProduct Name\t\t: %s",st.productname);
+				printf("\nProduct Company\t\t: %s",st.productcomp);
+				printf("\nPrice\t\t\t: %i",st.price);
+				printf("\nProduct Code\t\t: %i",st.productid);
+				printf("\nProduct Quantity\t:%i",st.Qnt);
+			
+				printf("\n\n\t*** New Record ***");
+			do
+				{
+					
+					fflush(stdin);
+					printf("\nNew Product Name\t\t: ");
+					gets(st.productname); 
+					st.productname[0]=toupper(st.productname[0]);
+					
+					for (index=0; index<strlen(st.productname); ++index)
+					{	
+						if(isalpha(st.productname[index]))
+							valid = 1;
+						else
+						{
+							valid = 0;
+							break;
+						}
+					}
+					if (!valid)
+					{
+						printf("\n Name contain invalid character. Please 'Enter' again");
+						getch();
+					
+						
+					}
+				}while(!valid);	
+				
+		
+				
+				do
+				{
+					char productcomp[40];
+					fflush(stdin);
+					printf("\nNew Product Company\t\t:");
+					gets(st.productcomp); 
+					st.productcomp[0]=toupper(st.productcomp[0]);
+					
+					for (index=0; index<strlen(st.productcomp); ++index)
+					{	
+						if(isalpha(st.productcomp[index]))
+							valid = 1;
+						else
+						{
+							valid = 0;
+							break;
+						}
+					}
+					if (!valid)
+					{
+						printf("\n Name contain invalid character. Please 'Enter' again");
+						getch();
+					
+						
+					}
+				}while(!valid);
+				
+					do
+			{
+				printf("\nNew Price [10-5000]Rupees:");
+				scanf("%i",&st.price);
+				if(st.price<10 || st.price>5000)
+				{
+					printf("\n\tYou Cannot Enter the price limit [10-5000].Re-Enter.");
+				}
+			}while(st.price<10 || st.price>5000);
+			
+				printf("\nEnter New Product Code\t\t:");
+				scanf("%i",&st.productid); 
+				
+				do
+			{
+				printf("\nNew Quantity [1-500]\t:");
+				scanf("%i",&st.Qnt);
+				if(st.Qnt<1 || st.Qnt>500)
+				{
+					printf("\n\tEnter New Quantity[1-500] only.Re-Enter.");
+				}
+			}while(st.Qnt<1 || st.Qnt>500);
+				
+				
+				printf("Press 'y' to edit the existing record or any key to cancel...");
+				edit=getche();
+				if(edit=='y' || edit=='Y')
+				{
+					fprintf(rp,"%s %s %i %i %i\n", st.productname, st.productcomp, st.price, st.productid,st.Qnt);
+					fflush(stdin);
+					printf("\n\n\t\tYOUR RECORD IS SUCCESSFULLY EDITED!!!");
+				}
+			}
+			else
+			{
+				fprintf(rp,"%s %s %i %i %i\n", st.productname, st.productcomp, st.price, st.productid,st.Qnt);
+				fflush(stdin);
+			}
+			
 		}
-		continue;
-		cstr[g].productno=cst[i].productno;
-	  	strcpy(cstr[g].productname,cst[i].productname);
-	  	cstr[g].quantity=cst[i].quantity;
-	  	cstr[g].price=cst[i].price;
-	  	g++;
-	}
-	for(j=0;j<g;j++)
-	{
-		cst[j].productno=cstr[j].productno;
- 	 	strcpy(cst[j].productname,cstr[j].productname);
-	  	cst[j].quantity=cstr[j].quantity;
-	  	cst[j].price=cstr[j].price;
-	}
-	ti=g;
-	printf("\n%d",aj);
-	fq=fopen("shop.txt","r");
-	fw=fopen("temp4.txt","w");
-	for(j=0;j<n;j++)
-	{
-		fscanf(fq,"%d",&item.productno);
-		fscanf(fq,"%s",item.productname);
-		fscanf(fq,"%d",&item.quantity);
-		fscanf(fq,"%d",&item.price);
-		if(item.productno==f)
+		if(!a)
 		{
-		    ag=aj+item.quantity;
-            fprintf(fw,"%d\t%s\t%d\t%d\t",item.productno,item.productname,ag,item.price);
-        }
-        else
-        {
-        	fprintf(fw,"%d\t%s\t%d\t%d\t",item.productno,item.productname,item.quantity,item.price);
-        }
+			printf("\n\nTHIS PRODUCT DOESN'T EXIST!!!!");
+		}
+		fclose(rp);
+		fclose(fp);
+		remove("NextFile.dat");
+		rename("TempFile.dat","NextFile.dat");
+		getch();
 	}
-	fclose(fq);
-	fclose(fw);
-	remove("Records.txt");
-	rename("temp4.txt","Records.txt");
-}
-void mdisplay()
-{
-	int i;
-	int j;
-	int o;
-	printf("================================================================================\n");
-	printf("product number\t|product name\t|quantity\t|price\t\n");
-	printf("================================================================================\n");
-	for(o=0;o<ti;o++)
-	{
-		printf("%14d\t|%12s\t|%6d\t|%6d\n",cst[o].productno,cst[o].productname,cst[o].quantity,cst[o].price);
-	}
+	menu();
 }
 
-int main()
-{
-	char ch,password[10],q[10]="nirmal";
-	int s=0;
-	int y=0;
-	int w=1;
-	int i;
-	FILE *fpe;
-	fpe=fopen("Quantity.txt","r");
-	fscanf(fpe,"%d",&n);
-	fclose(fpe);
-	printf("\n");
-	printf("************************************************************************************************************************");
-	printf("\n");
-	printf("*****************************************    WELCOME TO PASTRY SHOP    *************************************************");
-	printf("\n");
-	printf("\t                               YOU ARE LUCKY TO BE SHOPPING HERE");
-	printf("\n\n");
-	printf("\t\t\tPlease note that all the Product's Price are Discounted and are Genuine");
-	printf("\n");
-	printf("\t\t\t\t\t");
-    printf("      Reference Number: %d\n",n);
-    q: printf("\n\t");
-    printf("****************************");
-    printf("\n");
-    printf("\t");
-    printf("Please Select an Option: ");
-    printf("\n");
-    printf("\t");
-    printf("****************************");
-    printf("\n");
-    printf("\t");
-	printf("01. ADMINISTRATOR");
-	printf("\n\t");
-	printf("02. CUSTOMER");
-	printf("\n\t");
-	printf("03. EXIT");
-	printf("\n");
-	printf("\n\t");
-	printf("Please Enter an Option: ");
-	scanf("%d",&s);
-
-	switch(s)
-	{
-	          case 1: printf("\tEnter Password:\t");
-              for(i=0;i<6;i++)
-              {
-              ch = getch();
-              password[i] = ch;
-              ch = '*' ;
-               printf("%c",ch);
-              }
-              password[i]='\0';
-              if(strcmp(password,q))
-              {
-                  printf("\n\t");
-              printf("Wrong Password Please Try Again");
-              printf("\n\n");
-              goto q;
-             }
-               else
-               goto l3;
-               l3: printf("\n\t");
-               printf("Access Granted\n");
-               printf("\n\n");
-               printf("\t");
-               printf("****************************");
-               printf("\n");
-               printf("\t");
-               printf("Please Select an Option: ");
-               printf("\n");
-               printf("\t");
-               printf("****************************");
-               printf("\n");
-		       printf("\t01.CREATE");
-		       printf("\n\t");
-		       printf("02.DELETE/MODIFY");
-		       printf("\n\t");
-		       printf("03.DISPLAY");
-		       printf("\n\t");
-		       printf("04.MAIN MENU");
-		       printf("\n");
-		       printf("\n");
-		       printf("\t");
-		       printf("Please Enter an Option: ");
-		        scanf("%d",&y);
-		        switch(y)
-		        {
-        			case 1:create();
-        			      goto q;
-  			      case 2:edit();
-  			             goto q;
-                  case 3:display();
-                         goto q;
-                  case 4: goto q;
-                  default : printf("error\n");
-				  goto q;
-        		}
-		         break;
-
-       case 2: printf("\n");
-               printf("\t");
-               printf("****************************");
-               printf("\n");
-               printf("\t");
-               printf("Plese Select an Option: ");
-               printf("\n");
-               printf("\t");
-               printf("****************************");
-               printf("\n");
-               printf("\t");
-               printf("01.BILL");
-               printf("\n\t");
-               printf("02.INVOICE");
-               printf("\n\t");
-               printf("03.DISPLAY");
-               printf("\n\t");
-               printf("04.MYCART");
-               printf("\n\t");
-               printf("05.MAIN MENU");
-               printf("\n\t");
-               printf("06.DELETE ITEMS IN CART\n");
-               printf("\n\t");
-               printf("Please Enter an Option: ");
-               scanf("%d",&y);
-               printf("\n");
-               switch(y)
-		        {
-                    case 1 : bill();
-        			         goto q;
-
-                    case 2 : invoice();
-                             goto q;
-
-                    case 3 : display();
-                             goto q;
-
-                    case 4 : mdisplay();
-                             goto q;
-
-                    case 5 : goto q;
-
-                    case 6 : mdelete();
-                             goto q;
-
-                    default : printf("Error\n");
-                              goto q;
-        		}
-		         break;
-      case 3: printf("\tExiting...\n");
-      break;
-      default : printf("error\n");
-      break;
-	}
-}
