@@ -4,11 +4,11 @@
 | Test Id |	keys |	Description |	Expected output |	Actual output |	Pass/Fail(Result) |
 |------|------|------|------|------|------|
 | TID 1 | A | Adding Products | SUCCESS |	SUCCESS |	PASS 
-| TID 2 |	L	| Delete Products|	SUCCESS	| SUCCESS	 | PASS
-| TID 3	| M	| Edit Items | Records |	SUCCESS |	SUCCESS	|PASS
-| TID 4 |	P	| Read Items	| SUCCESS	| SUCCESS	| PASS
+| TID 2 |	D	| Delete Products|	SUCCESS	| SUCCESS	 | PASS
+| TID 3	| M	| Modify Items | Records |	SUCCESS |	SUCCESS	|PASS
+| TID 4 |	R	| Read Items	| SUCCESS	| SUCCESS	| PASS
 | TID 5	| S	| Searching Products | SUCCESS |	SUCCESS | PASS
-| TID 6	| D |	Exit | SUCCESS |	SUCCESS	| PASS
+| TID 6	| E |	Exit | SUCCESS |	SUCCESS	| PASS
 
 
 #### Low Level Test Cases:
@@ -20,15 +20,15 @@
 
 # OUTPUT:
 
-### welcome Page:
+### Welcome Page:
 
 ![2](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/blob/main/4_TestPlanAndOutput/Screenshot%20(808).png)
 
-### Records:
+### Login Page:
 
 ![3](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/blob/main/4_TestPlanAndOutput/Screenshot%20(810).png)
 
-### System Generated Bill:
+### System Page:
 
 ![4](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/blob/main/4_TestPlanAndOutput/Screenshot%20(811).png)
 
