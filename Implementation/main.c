@@ -105,7 +105,7 @@ void login()
 	
 		printf("\n			Please Enter Your Valid Username & Password.");
 		printf("\n\n					Username:");
-		scanf("%s",username);
+		scanf("%s", username);
 		
 		printf("\n			    		Password:");
 
@@ -318,7 +318,7 @@ void search_item()
 	target[0]=toupper(target[0]);
 	while (!feof(sfile) && found==0)
 	{
-		fscanf(sfile,"%s %s %i %i %i", st.productname, st.productcomp, &st.price, &st.productid,&st.Qnt);
+		fscanf(sfile,"%s %s %i %i %i", st.productname, st.productcomp, &st.price, &st.productid, &st.Qnt);
 		if(strcmp(target, st.productname)==0)
 		{
 			found=1;		
@@ -349,9 +349,9 @@ void deleteproduct(void)
 	tfile=fopen("TempFile.dat","w+");
 	printf("\n Enter name to Delete: ");
 	fflush(stdin);
-	scanf("%s",target);
+	scanf("%s", target);
 	target[0]=toupper(target[0]);
-	while (fscanf(sfile,"%s %s %i %i %i\n",st.productname,st.productcomp, &st.price,&st.productid,&st.Qnt)!=EOF)
+	while (fscanf(sfile,"%s %s %i %i %i\n",st.productname,st.productcomp, &st.price, &st.productid, &st.Qnt)!=EOF)
 	{
 		if(strcmp(target,st.productname)==0)
 		{
