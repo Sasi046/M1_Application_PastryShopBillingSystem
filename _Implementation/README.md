@@ -1,4 +1,4 @@
-# _Implementation
+# Implementation
 
 ## Folder Structure
 
