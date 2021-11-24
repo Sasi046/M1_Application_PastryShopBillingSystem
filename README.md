@@ -7,6 +7,8 @@
 
 [![Unit Testing - Unity](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/unity.yml/badge.svg)](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/unity.yml)
 
+[![Code Quality - Static Code - Cppcheck](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/cppcheck.yml)
+
 ### Introduction
 
 The source code of Pastry Shop Billing System Project in C has been written in C programming language without of the use of any graphics. The code is complete, totally error free. It is to be compiled in Visual studios using GCC compiler.
