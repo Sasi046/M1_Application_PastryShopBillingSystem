@@ -2,14 +2,14 @@
 
 #  Code-Inspector Badges
 
-  Codacy | Unity | Cpp check |
+  Codacy  | Unity  | Cpp check  |
 
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8cdfca107f2d460dadc1f134b6dbc2dd)](https://www.codacy.com/gh/Nirmalrg2898/M1_Application_PastryShopBillingSystem/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Nirmalrg2898/M1_Application_PastryShopBillingSystem&amp;utm_campaign=Badge_Grade)| [![Unit Testing - Unity](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/unity.yml/badge.svg)](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/unity.yml)| [![Code Quality - Static Code - Cppcheck](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/cppcheck.yml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8cdfca107f2d460dadc1f134b6dbc2dd)](https://www.codacy.com/gh/Nirmalrg2898/M1_Application_PastryShopBillingSystem/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Nirmalrg2898/M1_Application_PastryShopBillingSystem&amp;utm_campaign=Badge_Grade) | [![Unit Testing - Unity](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/unity.yml/badge.svg)](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/unity.yml) | [![Code Quality - Static Code - Cppcheck](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/cppcheck.yml)
 
 ### Introduction
 
-The source code of Pastry Shop Billing System Project in C has been written in C programming language without of the use of any graphics. The code is complete, totally error free. It is to be compiled in Visual studios using GCC compiler.
+The source code of Pastry Shop Billing System Project has been written in C programming language without of the use of any graphics. The code is complete, totally error free. It is to be compiled in Visual studios using GCC compiler.
 
 we can use this application to keep the product records such as name, code, prize, quantity, company etc. of your regular stocks. Moreover, if we have a new product, we can add and edit the account at any time.
 
