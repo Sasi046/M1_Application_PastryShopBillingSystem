@@ -32,16 +32,20 @@ Major activities of the manual system is automated, which increases its throughp
    
    How-The inconvinience is caused in storing data manually and accessing it. Digitally storing data will be helpful in accessing data easily and modifying it.
   
-## Detail requirements
+## Details requirements
+### High Level Requirements:
+| ID | Description | Status |
+|------| ------| ------|
+| HLR1 | User shall be able to Add new Products (A) | Implemented
+|HLR2  | User shall be able to Delete Products (D) | Implemented
+|HLR3  | User shall be able to Modifying Products (M) |	Implemented
+|HLR4  | User shall be able to Read Items (R) |	Implemented
+|HLR5  | User shall be able For Search Items(S) |	Implemented
+|HLR6  | User shall be able to Exit(E) |	Implemented
 
-### High Level Requirements
+#### Low Level Requirements:
 
- 1) HLR1-System Shall be able to add or edit at any time-Implemented
- 2) HLR2-User can add product-Implemented
- 3) HLR3-User can able to search product-Implemented
- 4) HLR4-user can able to delete product-Implemented
-
-### Low level Requirements
-
- 1) LLR1-User can save product- name, code, prize, quantity, company-Implemented
- 2) LLR2-System Shall be able to Exit-Implemented
+| ID | Description | Status |
+|-------|------|------|
+| LLR1 | User shall be able to fetch Products | Implemented 
+| LLR2 |System must display data without error | Implemented
