@@ -26,16 +26,17 @@ The function `void search()` has been used to look for previously stored account
 
 In Pastry Shop Billing System, structure has very beautifully used to group the data type in single unit. The date variables (`day`, `month` and `year`) have been grouped in the structures named date where as other variables such as name, code, prize, quantity, company etc. are grouped under another structure named account.
 
-#### Functions
+## Functions 
+##### Pastry Shop Billing System application is so simple to use. In order to use the application, click at the exe file and then, you will have six options to:
 
-Pastry Shop Billing System application is so simple to use. In order to use the application, click at the exe file and then, you will have three options to:
-
-1. `To Add products`
-2. `To Search product`
-3. `To Delete products`
-4. `To Read items`
-5. `To Edit items`
-6. `To Exit`
+| Feature Id | Feature |
+| -----------|---------|
+|F_01| Adding the Products  |
+|F_02| Deleting the Products  |
+|F_03| Modify the Products |
+|F_04| Read the Items |
+|F_05| Search the Items |
+|F_06| Exit |
 
 As per your need, enter 1, 2, 3, 4, 5 or 6 and follow the instructions provided by the application itself.
 
@@ -47,18 +48,19 @@ The Pastry Shop billing System project in C gives you the facility of searching 
 The product stocks is shown in read system .
 If you have nothing to do with the program, you can directly exit from the main menu.
 
-### Folder Structure
+## Folder Structure
+Folder               | Description
+-------------------  | -----------------------------------------
+`1_Requirements`     | Documents Detailing requirements and research.
+`2_Architecture`     | Documents Specifying design details.
+`3_Implementation`   | All Code and Documentation.
+`4_Test Plan`| Test Cases.
 
-1) Requirements `Documents Detailing requirements and research`
-2) Architecture `Documents Specifying design details`
-3) Implementation `All Code and Documentation`
-4) Test Plan `Test Cases`
+## Integrated Tools to GitHub
+* [Codacy](https://www.codacy.com/)
 
-### Integrated Tools to GitHub 
 
-Codacy
-
-### Challenges Faced and How Was It Overcome
+## Challenges Faced and How Was It Overcome
 
 1.GCC erorr in windows and linux: installed the gcc msys64 mingw64 properly.
 
@@ -66,8 +68,12 @@ Codacy
 
 3.Unity testing: Initially a few testcases did not pass, to overcome this issue debugging of program was performed.
 
-### Learning Resources 
+## Learning Resources
 
-1.gcc makefile
-2.github workflow
+1.[gcc makefile](https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html#zz-2.1)
+
+2.[github workflow](https://www.programiz.com/c-programming/c-dynamic-memory-allocation)
+
+3.[structure in c](https://www.studytonight.com/c/structures-in-c.php/)
+
 
