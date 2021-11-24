@@ -30,7 +30,7 @@ Major activities of the manual system is automated, which increases its throughp
 
    Where-It can be used in retail shops.
    
-   How-The inconvinience is caused in storing data manually and accessing it.Digitally storing data will be helpful in accessing data easily and modifying it.
+   How-The inconvinience is caused in storing data manually and accessing it. Digitally storing data will be helpful in accessing data easily and modifying it.
   
 ## Detail requirements
 
