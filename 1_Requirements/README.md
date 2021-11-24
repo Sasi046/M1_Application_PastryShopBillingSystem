@@ -1,17 +1,17 @@
 ## Operating Environment
-### 1) single-User Environment- The system should allow for accessibility of single user.
-### 2) User customizable for automation to support ease of implementation and enhanced reliability.
+##### 1) single-User Environment- The system should allow for accessibility of single user.
+##### 2) User customizable for automation to support ease of implementation and enhanced reliability.
 
 ## Research
  
-### Pastry Billing System can perform and handle product stocks. we can add product records with names, code, prize, quantity, company here. Existing Product records can be readed, edited, searched, and deleted.
+##### Pastry Billing System can perform and handle product stocks. we can add product records with names, code, prize, quantity, company here. Existing Product records can be readed, edited, searched, and deleted.
  
 ## General Features
 
 ### Major activities of the manual system is automated, which increases its throughput.
-#### • The system is fast, user friendly and interactive
-#### • The information entered is more accurate and clear
-#### • Better data management facility in terms of maintaining files which are entered in registers manually and stored.
+##### • The system is fast, user friendly and interactive
+##### • The information entered is more accurate and clear
+##### • Better data management facility in terms of maintaining files which are entered in registers manually and stored.
  
 ## SWOT ANALYSIS
 ### Strengths:
