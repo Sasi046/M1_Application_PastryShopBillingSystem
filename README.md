@@ -1,13 +1,11 @@
 # M1_Application_PastryShopBillingSystem
 
-## Code-Inspector Badges
+#  Code-Inspector Badges
+
+  Codacy | Unity | Cpp check |
 
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8cdfca107f2d460dadc1f134b6dbc2dd)](https://www.codacy.com/gh/Nirmalrg2898/M1_Application_PastryShopBillingSystem/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Nirmalrg2898/M1_Application_PastryShopBillingSystem&amp;utm_campaign=Badge_Grade)
-
-[![Unit Testing - Unity](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/unity.yml/badge.svg)](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/unity.yml)
-
-[![Code Quality - Static Code - Cppcheck](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/cppcheck.yml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8cdfca107f2d460dadc1f134b6dbc2dd)](https://www.codacy.com/gh/Nirmalrg2898/M1_Application_PastryShopBillingSystem/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Nirmalrg2898/M1_Application_PastryShopBillingSystem&amp;utm_campaign=Badge_Grade)| [![Unit Testing - Unity](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/unity.yml/badge.svg)](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/unity.yml)| [![Code Quality - Static Code - Cppcheck](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/cppcheck.yml/badge.svg)](https://github.com/Nirmalrg2898/M1_Application_PastryShopBillingSystem/actions/workflows/cppcheck.yml)
 
 ### Introduction
 
@@ -27,7 +25,7 @@ The function `void input()` is used to add the new customer account i.e. with th
 
 The function `void search()` has been used to look for previously stored accounts either by name or by number of the customer. The fourth and the last user defined function used in this Pastry shop billing system Project in C is `void output()` which has been defined to show the result as console output.
 
-In Pastry Shop Billing System, structure has very beautifully used to group the data type in single unit. The date variables (`day`, `month` and `year`) have been grouped in the structures named date where as other variables such as name, code, prize, quantity, company etc. are grouped under another structure named account.
+In Pastry Shop Billing System, structure has used to group the data type in single unit. The date variables (`day`, `month` and `year`) have been grouped in the structures named date where as other variables such as name, code, prize, quantity, company etc. are grouped under another structure named account.
 
 ## Functions 
 ##### Pastry Shop Billing System application is so simple to use. In order to use the application, click at the exe file and then, you will have six options to:
