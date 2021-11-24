@@ -1,7 +1,7 @@
 
 # M1_Application_PastryShopBillingSystem
 
-### Code-Inspector Badges
+## Code-Inspector Badges
 
 #### Codacy
 
@@ -50,10 +50,10 @@ If you have nothing to do with the program, you can directly exit from the main 
 
 ### Folder Structure
 
-1) Requirements-Documents Detailing requirements and research.
-2) Architecture-Documents Specifying design details.
-3) Implementation-All Code and Documentation.
-4) Test Plan-test Cases.
+1) Requirements `Documents Detailing requirements and research`.
+2) Architecture `Documents Specifying design details`.
+3) Implementation `All Code and Documentation`.
+4) Test Plan `Test Cases`.
 
 ### Integrated Tools to GitHub 
 
