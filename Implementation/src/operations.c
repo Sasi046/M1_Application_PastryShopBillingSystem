@@ -249,7 +249,7 @@ void search_item()
 	target[0]=toupper(target[0]);
 	while (!feof(sfile) && found==0)
 	{
-		fscanf(sfile,"%s %s %i %i %i", st.productname, st.productcomp, &st.price, &st.productid,&st.Qnt);
+		fscanf(sfile,"%s %s %i %i %i", st.productname, st.productcomp, &st.price, &st.productid, &st.Qnt);
 		if(strcmp(target, st.productname)==0)
 		{
 			found=1;		
