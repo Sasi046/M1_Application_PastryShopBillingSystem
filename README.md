@@ -1,4 +1,3 @@
-
 # M1_Application_PastryShopBillingSystem
 
 ## Code-Inspector Badges
@@ -7,13 +6,13 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/8cdfca107f2d460dadc1f134b6dbc2dd)](https://www.codacy.com/gh/Nirmalrg2898/M1_Application_PastryShopBillingSystem/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Nirmalrg2898/M1_Application_PastryShopBillingSystem&amp;utm_campaign=Badge_Grade)
 
-### Introduction:
+### Introduction
 
 The source code of Pastry Shop Billing System Project in C has been written in C programming language without of the use of any graphics. The code is complete, totally error free. It is to be compiled in Visual studios using GCC compiler.
 
 we can use this application to keep the product records such as name, code, prize, quantity, company etc. of your regular stocks. Moreover, if we have a new product, we can add and edit the account at any time.
 
-### User Defined Functions Used:
+### User Defined Functions Used
 
 Although graphics has not been used in this project, the application of user defined functions and structures have been effectively used here. The major user defined functions used in this C project are:
 1. `void input()`                                                                                                                  
@@ -27,7 +26,7 @@ The function `void search()` has been used to look for previously stored account
 
 In Pastry Shop Billing System, structure has very beautifully used to group the data type in single unit. The date variables (`day`, `month` and `year`) have been grouped in the structures named date where as other variables such as name, code, prize, quantity, company etc. are grouped under another structure named account.
 
-#### Functions:
+#### Functions
 
 Pastry Shop Billing System application is so simple to use. In order to use the application, click at the exe file and then, you will have three options to:
 
@@ -40,7 +39,7 @@ Pastry Shop Billing System application is so simple to use. In order to use the 
 
 As per your need, enter 1, 2, 3, 4, 5 or 6 and follow the instructions provided by the application itself.
 
-### Features:
+### Features
 
 It can hold any number of products and product can be added to the program at any time.
 The programming of simple calculations such as calculation of due amount, balance etc. have been embed in the code of project.
@@ -50,10 +49,10 @@ If you have nothing to do with the program, you can directly exit from the main 
 
 ### Folder Structure
 
-1) Requirements `Documents Detailing requirements and research`.
-2) Architecture `Documents Specifying design details`.
-3) Implementation `All Code and Documentation`.
-4) Test Plan `Test Cases`.
+1) Requirements `Documents Detailing requirements and research`
+2) Architecture `Documents Specifying design details`
+3) Implementation `All Code and Documentation`
+4) Test Plan `Test Cases`
 
 ### Integrated Tools to GitHub 
 
@@ -70,6 +69,5 @@ Codacy
 ### Learning Resources 
 
 1.gcc makefile
-
 2.github workflow
 
