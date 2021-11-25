@@ -1,5 +1,5 @@
 PROJ_NAME = PastryShopBillingSystem
-SRC = Operations.c Operations.c
+SRC = operations.c operations.c
 
 #To check if the OS is windows or linux and set the executable file extension and delete command accordingly
 ifdef OS
